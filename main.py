@@ -1,7 +1,5 @@
 import discord
 import os
-import urllib3
-import json
 from dotenv import load_dotenv
 from reddit import reddit
 
@@ -20,8 +18,6 @@ class MyBot(discord.Client):
             await reddit(subreddit, message)
 
 load_dotenv()
-useragent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0'
-http = urllib3.PoolManager()
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyBot(intents=intents)
